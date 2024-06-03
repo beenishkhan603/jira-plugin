@@ -1,0 +1,31 @@
+# modules:
+#   jira:issuePanel:
+#     - key: botterfly-hello-world-panel
+#       function: main
+#       title: botterfly
+#       icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+#   function:
+#     - key: main
+#       handler: index.run
+# app:
+#   id: ari:cloud:ecosystem::app/a0f29c68-5825-4b46-9239-efea12db5830
+modules:
+  jira:issuePanel:
+    - key: my-issue-panel
+      title: Grooming tasks
+      function: main
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: main
+      handler: index.run
+app:
+  id: ari:cloud:ecosystem::app/a0f29c68-5825-4b46-9239-efea12db5830
+permissions:
+  scopes:
+    - 'read:jira-work'
+    - 'write:jira-work'
+    - 'storage:app'
+  external:
+    fetch:
+      backend:
+        - 'https://fakestoreapi.com'
